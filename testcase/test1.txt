@@ -1,4 +1,8 @@
+INSERT t number
 INSERT x number
-INSERT y string
-ASSIGN x 15
-ASSIGN y 76
+ASSIGN x t
+LOOKUP x
+BEGIN
+ASSIGN x 123
+INSERT x number
+LOOKUP x
