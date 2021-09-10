@@ -11,8 +11,8 @@ private:
         this->method = method;
         this->name = name;
         this->type = type;
-        next = NULL;
-        prev = NULL;
+        this->next = NULL;
+        this->prev = NULL;
     };
     ~Node(){};
     friend class SymbolTable;
@@ -41,6 +41,13 @@ public:
     bool contains(Node* head, Node *T);
     void print(Node* head);
     /*--------------------------------SUPPORT FUNCTION------------------------------*/
-
+    
+    // ~SymbolTable(){
+    //     delete this->head;
+    //     delete this->tail;
+    //     this->head = NULL;
+    //     this->tail = NULL;
+    //     this->count = 0;
+    // };
 };
 #endif

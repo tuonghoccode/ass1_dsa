@@ -1,8 +1,39 @@
-INSERT t number
-INSERT x number
-ASSIGN x t
-LOOKUP x
+INSERT zgPxA string
+INSERT xZt number
+INSERT oOa1Y number
+INSERT zAk number
+INSERT o8 number
+INSERT tvFYQY string
+INSERT u string
 BEGIN
-ASSIGN x 123
-INSERT x number
-LOOKUP x
+INSERT w number
+INSERT k string
+INSERT m5T8I string
+INSERT glaJFZ string
+INSERT b number
+RPRINT
+PRINT
+INSERT eZr string
+INSERT hm string
+INSERT m number
+INSERT u number
+PRINT
+INSERT lA3sj string
+RPRINT
+INSERT vq_D number
+INSERT i_D number
+RPRINT
+INSERT w number
+INSERT s string
+INSERT tnj1A string
+INSERT c7 string
+INSERT glnpvI number
+INSERT aMdFuw number
+INSERT oq0sC1 number
+INSERT o7 string
+RPRINT
+LOOKUP glaJFZ
+INSERT fK number
+END
+INSERT ygT number
+INSERT jDMYD number
