@@ -2,52 +2,61 @@
 #define SYMBOLTABLE_H
 #include "main.h"
 
-class Node{
+class Node {
 private:
-    string method, name, type;
-    Node* next, *prev;
-    Node(){};
-    Node(string method, string name, string type){
-        this->method = method;
-        this->name = name;
-        this->type = type;
-        this->next = NULL;
-        this->prev = NULL;
-    };
-    ~Node(){};
-    friend class SymbolTable;
+  string method, name, type;
+  Node *next, *prev;
+  Node(){};
+  Node(string method, string name, string type) {
+    this->method = method;
+    this->name = name;
+    this->type = type;
+    this->next = NULL;
+    this->prev = NULL;
+  };
+  ~Node(){};
+  friend class SymbolTable;
 };
 
-class SymbolTable{
+class SymbolTable {
 private:
-    Node *head, *tail;
-    int count;
+  Node *head, *tail;
+  int count;
+
 public:
-    SymbolTable() {
-        this->head = NULL;
-        this->tail = NULL;
-        this->count = 0;
-    }
-    void run(string filename);
-    void insert(Node* &head, Node* &tail, Node* T, string dataLine, int level);
-    void assign(Node* &head, Node* &tail, Node* T, string dataLine, int level);
-    void lookup(Node* &head, Node* &tail, Node* T, string dataLine, int level);
-    void print(Node* &head, Node* &tail, int level);
-    void rprint(Node* &head, Node* &tail, int level);
+  SymbolTable() {
+    this->head = NULL;
+    this->tail = NULL;
+    this->count = 0;
+  }
+  void run(string filename);
+  void insert(Node *&head, Node *&tail, Node *T, string dataLine, int level);
+  void assign(Node *&head, Node *&tail, Node *T, string dataLine, int level);
+  void lookup(Node *&head, Node *&tail, Node *T, string dataLine, int level);
+  void print(Node *&head, Node *&tail, int level);
+  void rprint(Node *&head, Node *&tail, int level);
 
-    /*--------------------------------SUPPORT FUNCTION------------------------------*/
+  /*--------------------------------SUPPORT
+   * FUNCTION------------------------------*/
 
-    bool isEmpty(Node* &head);
-    bool contains(Node* head, Node *T);
-    void print(Node* head);
-    /*--------------------------------SUPPORT FUNCTION------------------------------*/
-    
-    // ~SymbolTable(){
-    //     delete this->head;
-    //     delete this->tail;
-    //     this->head = NULL;
-    //     this->tail = NULL;
-    //     this->count = 0;
-    // };
+  bool isEmpty(Node *&head);
+  bool contains(Node *head, Node *T);
+  void print(Node *head);
+
+  /*--------------------------------SUPPORT
+   * FUNCTION------------------------------*/
+
+  ~SymbolTable() {
+//     Node *current = this->head;
+//     Node *next = NULL;
+//     while (current != NULL) {
+//       next = current->next;
+//       free(current);
+//       current = next;
+//     }
+//     this->head = NULL;
+//     delete this->head;
+//     delete this->tail;
+  };
 };
 #endif

@@ -13,12 +13,12 @@ bool SymbolTable::isEmpty(Node *&head) {
     return true;
   return false;
 }
-bool SymbolTable::contains(Node *list, Node *T) {
+bool SymbolTable::contains(Node *check, Node *T) {
   bool result = false;
-  Node *p = list;
+  Node *p = check;
   if (p->method != "INSERT" && p->method != "BEGIN")
     return false;
-  while (p->next!= NULL) {
+  while (p->next != NULL) {
     if (p->method == T->method && p->name == T->name) {
       result = true;
       break;
@@ -70,7 +70,7 @@ void SymbolTable::insert(Node *&head, Node *&tail, Node *T, string dataLine,
   T->prev = this->tail;
   this->tail = T;
   this->count++;
-  Node *o = this->head;
+  // Node *o = this->head;
   // while (o != NULL) {
   //   {
   //     cout << o->method << " " << o->name << " " << o->type << endl;
@@ -137,7 +137,8 @@ void SymbolTable::assign(Node *&head, Node *&tail, Node *T, string dataLine,
   //   }
   // }
   Node *t = restHead;
-  if (t->method != "INSERT" ) throw Undeclared(dataLine);
+  if (t->method != "INSERT")
+    throw Undeclared(dataLine);
   while (t != NULL) {
     // while (t->method == "INSERT") {
     if (isNumber(T->type) ||
@@ -196,6 +197,9 @@ void SymbolTable::assign(Node *&head, Node *&tail, Node *T, string dataLine,
     this->tail = T;
     this->count++;
   } else {
+    // free(restHead);
+    // free(restTail);
+    // free(t);
     throw(TypeMismatch(dataLine));
   }
 }
@@ -436,8 +440,6 @@ void SymbolTable::run(string filename) {
   fstream newfile;
   newfile.open(filename, ios::in);
   if (newfile.is_open()) {
-    Node *head = new Node();
-    Node *tail = new Node();
     string dataLine, method, name, type;
     int level = 0;
     while (getline(newfile, dataLine)) {
@@ -485,4 +487,5 @@ void SymbolTable::run(string filename) {
       throw UnclosedBlock(level);
     }
   }
+
 }
